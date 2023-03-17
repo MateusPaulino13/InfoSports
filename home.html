@@ -14,25 +14,22 @@
   </head>
   <body>
     <!-- navbar -->
-    <ul class="navbar">
-      <li class="navbar-item">
-        <a class="active" href=""><i class="fa fa-fw fa-home"></i> Home</a>
-      </li>
-      <li class="navbar-item">
-        <a href="">Contato</a>
-      </li>
-      <li class="navbar-item">
-        <a href="">Peneiras</a>
-      </li>
-      <li class="navbar-item">
-        <a href="">Campeonatos</a>
-      </li>
-
-      <div class="login-container">
-        <button class="registrar">Registrar</button>
-        <button class="login">Login</button>
-      </div>
-    </ul>
+    <div id="mySidenav" class="sidenav">
+      <p>InfoSports</p>
+      <a href="javascript:void(0)" class="closebtn" onclick="FecharNav()"
+        >&times;</a
+      >
+      <a href="#">Home</a>
+      <a href="#">Campeonatos</a>
+      <a href="#">Peneiras</a>
+      <a href="#">Conta</a>
+    </div>
     <!-- navbar -->
+
+    <!-- Use any element to open the sidenav -->
+    <button class="btn" onclick="AbrirNav()">Menu</button>
+
+    <main></main>
+    <script src="/script/home.js"></script>
   </body>
 </html>
