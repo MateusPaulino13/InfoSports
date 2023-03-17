@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #d1d1d1;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    font-size: 1.3em;
+    display: block;
+    color: rgb(15, 15, 15);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: ease-in-out .2s;
+}
+
+.active {
+    color: #f2f2f2;
+    background-color: #FF7B33;
+    transition: ease-in-out .2s;
+}
+
+li a:hover:not(.active) {
+    color: #f2f2f2;
+    background-color: #333333cb;
+}
