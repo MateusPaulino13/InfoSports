@@ -14,6 +14,7 @@ body,
 html {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -73,4 +74,30 @@ li a {
 li a:hover:not(.active) {
   color: #f2f2f2;
   background-color: #b2b2b2cb;
+}
+
+/* Main */
+
+main {
+  display: flex;
+}
+
+.main-item {
+  background-color: var(--navbar);
+  margin: 1.5em 1em;
+  flex-grow: 2;
+}
+
+.main-item h3 {
+  display: block;
+  padding: 0.7em;
+  font-size: 1em;
+  text-align: justify;
+  background-color: #aeaeae;
+  border-radius: 0.5em;
+}
+
+.main-item p {
+  display: block;
+  padding: 0.7em;
 }
