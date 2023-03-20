@@ -94,13 +94,16 @@ main {
 .main-item h3 {
   padding: 0.7em;
   margin: 0.7em;
-  font-size: 1em;
+  font-size: 1.1em;
   text-align: justify;
   background-color: rgba(217, 217, 217, 0.791);
   border-radius: 0.5em;
 }
 
 .main-item p {
+  font-size: 1.07em;
   display: block;
+  text-align: justify;
   padding: 0.7em;
+  margin: 0 15px;
 }
