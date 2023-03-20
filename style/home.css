@@ -72,28 +72,31 @@ li a {
 }
 
 li a:hover:not(.active) {
-  color: #f2f2f2;
-  background-color: #b2b2b2cb;
+  color: var(--white);
+  background-color: var(--laranja);
 }
 
 /* Main */
 
 main {
   display: flex;
+  flex-flow: row;
+  justify-content: space-around;
 }
 
 .main-item {
-  background-color: var(--navbar);
-  margin: 1.5em 1em;
+  background-color: var(--white);
+  margin: 1.5em 1.7em;
   flex-grow: 2;
+  border-radius: .5em;
 }
 
 .main-item h3 {
-  display: block;
   padding: 0.7em;
+  margin: 0.7em;
   font-size: 1em;
   text-align: justify;
-  background-color: #aeaeae;
+  background-color: rgba(217, 217, 217, 0.791);
   border-radius: 0.5em;
 }
 
