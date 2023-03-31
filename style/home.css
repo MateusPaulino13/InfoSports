@@ -85,6 +85,7 @@ li a:hover:not(.active) {
 }
 
 .main-item {
+  flex: 1;
   background-color: var(--white);
   margin: 1.5em 1.7em;
   flex-grow: 2;
