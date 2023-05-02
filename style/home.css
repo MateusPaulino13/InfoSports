@@ -17,6 +17,12 @@ html {
   scroll-behavior: smooth;
 }
 
+hr {
+  margin: 0 auto 2rem auto;
+  width: 100rem;
+  border: 2px solid var(--navbar);
+}
+
 /* Navbar */
 .navbar {
   list-style-type: none;
@@ -31,9 +37,15 @@ html {
   float: left;
 }
 
+.meio {
+  margin-left: 38em;
+}
+
 li a {
+  width: 100px;
   display: flex;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  font-weight: bold;
   display: block;
   color: rgb(15, 15, 15);
   text-align: center;
@@ -44,6 +56,7 @@ li a {
 
 .navbar .login-container {
   float: right;
+  margin: 0 4em;
 }
 
 .navbar .login-container button {
@@ -71,23 +84,34 @@ li a {
   transition: ease-in-out 0.2s;
 }
 
+li a:hover:not(:hover) ::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
 li a:hover:not(.active) {
-  color: var(--white);
-  background-color: var(--orange);
+
 }
 
 /* Main */
 
-.main, .camp {
+.main {
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content:space-around;
 }
+
+.camp {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
 
 .main-item {
   flex: 1;
   background-color: var(--white);
-  margin: 1.5em 1.7em;
+  margin: 2rem 4em;
   flex-grow: 2;
   border-radius: .5em;
 }
@@ -107,4 +131,13 @@ li a:hover:not(.active) {
   text-align: justify;
   padding: 0.7em;
   margin: 0 15px;
+}
+
+
+.camp-item {
+  margin: 0 50px;
+  border-radius: 10px;
+  width: 30em;
+  padding: 2rem;
+  background-color: var(--white);
 }
