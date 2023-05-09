@@ -90,7 +90,7 @@ li a:hover:not(:hover) ::before {
 }
 
 li a:hover:not(.active) {
-
+  text-shadow:var(--orange) 0px 5px 0px;
 }
 
 /* Main */
