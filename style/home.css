@@ -40,3 +40,17 @@ html {
   color: #fff;
   transform: translateY(-7px);
 }
+
+.btn-login {
+  color: #fff;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid var(--verde);
+  color: var(--verde);
+  transition: all 0.3s;
+}
+
+.btn-login:hover {
+  background: #7ed956;
+  color: #fff;
+}
