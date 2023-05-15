@@ -15,5 +15,28 @@
 body,
 html {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+}
+
+.saiba_mais_btn {
+  width: 250px;
+  height: 60px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid var(--verde);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.saiba_mais_btn:hover {
+  background-color: var(--verde);
+  box-shadow: 0px 15px 20px rgba(126, 217, 86, 70%);
+  color: #fff;
+  transform: translateY(-7px);
 }
