@@ -1,6 +1,9 @@
 <?php
-    // Create connection
-    $conn = mysqli_connect("localhost", "root", "");
+    // Iniciando a sessão
+    session_start();
+
+    // Criando conexão
+    $conn = mysqli_connect("localhost", "root", "", "lumany");
 
     // Check connection
     if (!$conn) {

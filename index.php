@@ -1,5 +1,5 @@
 <?php
-
+    require '/src/pages/connection.php';
 ?>
 
 <!DOCTYPE html>
