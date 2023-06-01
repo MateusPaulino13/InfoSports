@@ -1,5 +1,5 @@
 <?php
-    require "connection.php";
+require "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,10 @@
 </head>
 
 <body>
-
+    <h3>Home</h3>
+    <button>
+        <a href="login.php">Login</a>
+    </button>
 </body>
 
 </html>
