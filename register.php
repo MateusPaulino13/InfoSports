@@ -1,5 +1,9 @@
+<?php
+include_once "connect.php";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -10,11 +14,10 @@
 
 <body>
     <form action="" method="post">
+        <label for="email">Email:</label>
         <input type="text" name="email">
-        <input type="text" name="nome">
-        <input type="password" name="senha">
-        <input type="text" name="endereco">
-        <input type="submit" name="Entrar">
+        <label for="password">Password:</label>
+        <input type="password" name="password">
     </form>
 </body>
 
