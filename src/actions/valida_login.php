@@ -1,6 +1,6 @@
 <?php
 //inclui a conexão
-require_once 'conexao.php';
+require_once 'connection.php';
 
 //Verifica se ha alguma informação vazia 
 if (isset($_POST['sub'])) {
@@ -21,7 +21,7 @@ if (isset($_POST['sub'])) {
         $_SESSION['adm'] = $f['adm'];
 
         //direciona para a pagina home com os dados do usuário
-        header('location:home.php');
+        header('location:../../home.php');
     } else {
         echo '<p class="text-lowercase text-white">Usuário ou senha não existentes</p>';
     }

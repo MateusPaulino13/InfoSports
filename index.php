@@ -91,8 +91,7 @@
               style="border: 1px solid #7ed956"
             >
               <a
-                style="color: #f7f7f7; text-decoration: none"
-                href="src/actions/login.php"
+                style="color: #f7f7f7; text-decoration: none" href="src/actions/login.php"
                 >Login</a
               >
             </button>
@@ -265,7 +264,7 @@
 
     <div class="container text-center my-5">
       <button
-        onclick="window.location.href = 'src/actions/cadastro.php'"
+        onclick="window.location.href = 'src/actions/login.php'"
         class="saiba_mais_btn"
       >
         Saiba Mais
@@ -295,7 +294,7 @@
             <use xlink:href="#bootstrap" />
           </svg>
         </a>
-        <span class="text-muted">&copy; 2023 Lumany Innovations</span>
+        <span class="text-muted">&copy; <?php echo date("Y") ?> Lumany Innovations</span>
       </div>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

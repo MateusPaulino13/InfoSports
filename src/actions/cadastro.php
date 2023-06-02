@@ -1,31 +1,19 @@
 <?php
-require_once 'src/actions/connection.php';
+require_once 'connection.php';
 
 if (isset($_POST['sub'])) {
     $nome = $_POST['text'];
     $usuario = $_POST['user'];
     $senha = $_POST['pass'];
     $cidade = $_POST['city'];
-    $g = $_POST['gen'];
+    $genero = $_POST['gen'];
 
     if ($_FILES['f1']['name']) {
-        move_uploaded_file($_FILES['f1']['tmp_name'], "src/image/" . $_FILES['f1']['name']);
-        $img = "src/image/" . $_FILES['f1']['name'];
+        move_uploaded_file($_FILES['f1']['tmp_name'], "../image/" . $_FILES['f1']['name']);
+        $img = "../image/" . $_FILES['f1']['name'];
     }
 
-    //não coloquei no produto final pois não funcionou completamente
-
-    // $verificacao = "SELECT * FROM reg WHERE username = '$usuario' AND password = '$senha'";
-    // $resultado = mysqli_query($con, $verificacao);
-    // if (mysqli_num_rows($resultado) > 0) {
-    //     echo "já existe";
-    // } else {
-    //     echo "registra ai po";
-    // }
-
-    // mysqli_close($con);
-
-    $i = "INSERT INTO reg(name, username, password, city, image, gender) VALUES('$nome','$usuario','$senha','$cidade','$img','$g')";
+    $i = "INSERT INTO reg(name, username, password, city, image, gender) VALUES('$nome','$usuario','$senha','$cidade','$img','$genero')";
 
     mysqli_query($con, $i);
 }
@@ -54,7 +42,7 @@ if (isset($_POST['sub'])) {
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-success my-2 my-sm-0 text-white" href="src/actions/login.php" role="button">Login</a>
+                <a class="btn btn-success my-2 my-sm-0 text-white" href="login.php" role="button">Login</a>
             </form>
         </div>
     </nav>

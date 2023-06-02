@@ -1,6 +1,6 @@
 <?php
 //inclui a conexão
-include "conexao.php";
+include "src/actions/connection.php";
 
 //seleciona o id
 $sessao = "SELECT * FROM reg WHERE id='$_SESSION[id]'";
@@ -43,7 +43,7 @@ $f = mysqli_fetch_assoc($qu);
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <a class="btn btn-danger mr-3 my-2 my-sm-0 text-white" href="logout.php" role="button">Sair</a>
+        <a class="btn btn-danger mr-3 my-2 my-sm-0 text-white" href="src/actions/logout.php" role="button">Sair</a>
       </form>
     </div>
   </nav>
