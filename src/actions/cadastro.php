@@ -9,8 +9,8 @@ if (isset($_POST['sub'])) {
     $g = $_POST['gen'];
 
     if ($_FILES['f1']['name']) {
-        move_uploaded_file($_FILES['f1']['tmp_name'], "image/" . $_FILES['f1']['name']);
-        $img = "image/" . $_FILES['f1']['name'];
+        move_uploaded_file($_FILES['f1']['tmp_name'], "src/image/" . $_FILES['f1']['name']);
+        $img = "src/image/" . $_FILES['f1']['name'];
     }
 
     //não coloquei no produto final pois não funcionou completamente
