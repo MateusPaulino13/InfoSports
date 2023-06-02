@@ -1,24 +1,28 @@
 <?php
-require_once "connect.php";
+//inclui a conexão
+require_once 'conexao.php';
 
-if (isset($_POST['email']) && isset($_POST['senha']) && $conexao != null) {
-    //query sql
-    $query = $conexao->prepare("SELECT * FROM usuarios WHERE Email = ? AND Senha = ?");
-    $query->execute(array($_POST['email'], $_POST['senha']));
+//Verifica se ha alguma informação vazia 
+if (isset($_POST['sub'])) {
+    $user = $_POST['user'];
+    $password = $_POST['pass'];
 
-    if ($query->rowCount()) {
-        //pegar tudo do usuário
-        $user = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+    //se ter o user e a senha, se não cai no else
+    $login = "SELECT * FROM reg WHERE username = '$user' AND password = '$password'";
+    $qu = mysqli_query($con, $login);
 
-        //sessão do usuário
-        $_SESSION['usuario'] = array($user['Nome'], $user['Adm']);
+    //se houser algum registro maior que 0, redirecionará para a home
+    if (mysqli_num_rows($qu) > 0) {
+        $f = mysqli_fetch_assoc($qu);
 
-        //redireciona para a página principal
-        header("Location: index.php");
+        //cria a sessão com o ID do usuario
+        $_SESSION['id'] = $f['id'];
+        $_SESSION['nome'] = $f['name'];
+        $_SESSION['adm'] = $f['adm'];
+
+        //direciona para a pagina home com os dados do usuário
+        header('location:home.php');
     } else {
-        //redireciona para o login
-        header("Location: login.php");
+        echo '<p class="text-lowercase text-white">Usuário ou senha não existentes</p>';
     }
-} else {
-    header("Location: login.php");
 }
