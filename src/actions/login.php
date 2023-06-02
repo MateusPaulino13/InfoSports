@@ -22,7 +22,7 @@
 
     <!-- Formulário de Login -->
     <div class="login">
-        <h1>Login</h1>
+        <h1>InfoSports - Login</h1>
         <form method="POST" action="src/actions/valida_login.php">
             <input type="text" name="user" placeholder="Usuário" required="required" />
             <input type="password" name="pass" placeholder="Senha" required="required" />
