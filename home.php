@@ -99,8 +99,8 @@ $f = mysqli_fetch_assoc($qu);
     <!-- tabela -->
     <!-- Botões -->
     <div class="btns">
-      <a href="editar.php" class="edit">Editar</a>
-      <a href="deletar.php" class="del">Deletar</a>
+      <a href="src/actions/editar.php" class="edit">Editar</a>
+      <a href="src/actions/excluir.php" class="del">Deletar</a>
     </div>
     <!-- Botões -->
   <?php endif; ?>
