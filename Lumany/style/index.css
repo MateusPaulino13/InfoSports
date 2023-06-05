@@ -1,0 +1,8 @@
+@font-face {
+  font-family: lumany;
+  src: url(/Lumany/style/fonte.otf);
+}
+
+body {
+  font-family: lumany;
+}
