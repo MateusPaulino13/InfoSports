@@ -506,8 +506,8 @@ body {
 }
 
 .contact-clean {
-  background: #f1f7fc;
-  padding: 80px 0;
+  background: transparent;
+  padding: 60px 0;
 }
 
 @media (max-width: 767px) {
@@ -519,7 +519,7 @@ body {
 .contact-clean form {
   max-width: 480px;
   width: 90%;
-  margin: 0 auto;
+  margin: -120px auto 0 auto;
   background-color: #ffffff;
   padding: 40px;
   border-radius: 4px;
