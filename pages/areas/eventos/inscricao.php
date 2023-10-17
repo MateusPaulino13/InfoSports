@@ -35,7 +35,7 @@
                             <h4 class="ml-3"><?php echo $campeonato['name'] ?></h4>
                             <p class="ml-3"><?php echo $campeonato['description'] ?></p>
                             <p class="ml-3"><?php echo $campeonato['location'] ?></p>
-                            <a href="../../../actions/confirma_inscricao.php?id=<?php echo $_SESSION['id'] ?> &anunciante=<?php echo $campeonato['id_anunciante'] ?>" class="btn btn-success btn-lg m-3">Inscrever-se</a>
+                            <a href="../../../actions/confirma_inscricao.php?id=<?php echo $campeonato['id'] ?> &anunciante=<?php echo $campeonato['id_anunciante'] ?>" class="btn btn-success btn-lg m-3">Inscrever-se</a>
                         </div>
                     </div>
                 </div>

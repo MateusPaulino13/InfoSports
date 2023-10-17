@@ -43,6 +43,6 @@
                         </div>
                     <?php endfor; ?>
                 </div>
-        </div>
+            </div>
         </body>
     </html>

@@ -46,7 +46,7 @@ $f = mysqli_fetch_assoc($query);
           <a class="nav-link" href="peneiras.php">Peneiras</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Notícias</a>
+          <a class="nav-link" href="noticias.php">Notícias</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

@@ -5,12 +5,13 @@ require_once "../actions/conexao.php";
 if (isset($_POST['submit'])) {
     $nome = $_POST['name'];
     $usuario = $_POST['user'];
+    $email = $_POST['email'];
     $senha = $_POST['password'];
     $endereco = $_POST['address'];
     $cpf = $_POST['cpf'];
 
-    $query = "SELECT name, username, password, address, cpf FROM anunciante
-    WHERE name='$nome' AND username='$usuario' AND password='$senha' 
+    $query = "SELECT name, username, email, password, address, cpf FROM anunciante
+    WHERE name='$nome' AND username='$usuario' AND email='$email' AND password='$senha' 
     AND address='$endereco' AND cpf='$cpf'";
 
     $resultado = mysqli_query($con, $query);
@@ -23,7 +24,7 @@ if (isset($_POST['submit'])) {
                 <p>Usuário já existente!</p>
             </div>';
     } else {
-        $query = "INSERT INTO anunciante(name, username, password, address, cpf) VALUES('$nome', '$usuario', '$senha', '$endereco', '$cpf')";
+        $query = "INSERT INTO anunciante(name, username, email, password, address, cpf) VALUES('$nome', '$usuario', '$email', '$senha', '$endereco', '$cpf')";
         mysqli_query($con, $query);
         header("Location: login.php");
     }
@@ -60,6 +61,11 @@ if (isset($_POST['submit'])) {
 
         <label for="user">Usuário :</label>
         <input name="user" type="text" required>
+
+        <br>
+
+        <label for="email">Email :</label>
+        <input name="email" type="text" required>
 
         <br>
 

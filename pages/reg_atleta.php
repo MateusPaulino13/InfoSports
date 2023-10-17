@@ -5,6 +5,7 @@ require_once "../actions/conexao.php";
 if (isset($_POST['submit'])) {
     $nome = $_POST['name'];
     $usuario = $_POST['user'];
+    $email = $_POST['email'];
     $senha = $_POST['password'];
     $altura = $_POST['height'];
     $peso = $_POST['weight'];
@@ -13,8 +14,8 @@ if (isset($_POST['submit'])) {
     $nascimento = $_POST['nascimento'];
     $jogou = $_POST['jogou'];
 
-    $query = "SELECT name, username, password, altura, peso, address, cpf, nascimento, jogou FROM atleta
-    WHERE name='$nome' AND username='$usuario' AND password='$senha' AND altura='$altura' AND peso='$peso'
+    $query = "SELECT name, username, email, password, altura, peso, address, cpf, nascimento, jogou FROM atleta
+    WHERE name='$nome' AND username='$usuario' AND email='$email' AND password='$senha' AND altura='$altura' AND peso='$peso'
     AND address='$endereco' AND cpf='$cpf' AND nascimento='$nascimento' AND jogou='$jogou'";
     $resultado = mysqli_query($con, $query);
 
@@ -26,8 +27,8 @@ if (isset($_POST['submit'])) {
                 <p>Usuário já existente!</p>
             </div>';
     } else {
-        $query = "INSERT INTO atleta(name, username, password, altura, peso, address, cpf, nascimento, jogou) 
-        VALUES('$nome', '$usuario', '$senha', '$altura', $peso, '$endereco', '$cpf', '$nascimento', '$jogou')";
+        $query = "INSERT INTO atleta(name, username, email, password, altura, peso, address, cpf, nascimento, jogou) 
+        VALUES('$nome', '$usuario', '$email', '$senha', '$altura', $peso, '$endereco', '$cpf', '$nascimento', '$jogou')";
         mysqli_query($con, $query);
         header("Location: login.php");
     }
@@ -65,6 +66,11 @@ if (isset($_POST['submit'])) {
 
         <label for="user">Usuário :</label>
         <input name="user" type="text" required>
+
+        <br>
+
+        <label for="email">Email :</label>
+        <input name="email" type="text" required>
 
         <br>
 
