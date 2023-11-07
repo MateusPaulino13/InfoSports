@@ -44,8 +44,6 @@ $f = mysqli_fetch_assoc($query);
      <?php require "../include/navbar2.php"; ?>
     <!-- navbar -->
 
-    <!-- navbar -->
-
     <!-- titulo -->
     <div class="container">
         <div class="row">

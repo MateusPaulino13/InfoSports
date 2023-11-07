@@ -14,7 +14,6 @@ if (isset($_POST['submit'])) {
         move_uploaded_file($_FILES['img']['tmp_name'], "../image/" . $_FILES['img']['name']);
         $img = "../image/" . $_FILES['img']['name'];
     }
-
     $query = "SELECT name, username, email, password, address, cpf FROM anunciante
     WHERE name='$nome' AND username='$usuario' AND email='$email' AND password='$senha' 
     AND address='$endereco' AND cpf='$cpf'";

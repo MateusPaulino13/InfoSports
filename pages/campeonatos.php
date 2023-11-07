@@ -11,7 +11,7 @@ $campeonato = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 // echo "<pre>";
 // print_r($campeonato);
-// echo "</pre>";
+$campeonato = mysqli_fetch_all($query);
 ?>
 
 <!DOCTYPE html>

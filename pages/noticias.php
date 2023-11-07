@@ -5,10 +5,6 @@
     $query = mysqli_query($con, $selection);
     $noticia = mysqli_fetch_all($query);
 
-    // // echo "<pre>";
-    // // print_r($noticia);
-    // // echo "</pre>";
-
     // Seleciona todas as postagens da tabela "posts"
     $selection = "SELECT * from posts";
     $query = mysqli_query($con, $selection);
