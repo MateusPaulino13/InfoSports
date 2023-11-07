@@ -7,7 +7,11 @@ if (!$_SESSION['autenticado']) {
 
 $selection = "SELECT * from evento WHERE tipo = 1";
 $query = mysqli_query($con, $selection);
-$campeonato = mysqli_fetch_all($query);
+$campeonato = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+// echo "<pre>";
+// print_r($campeonato);
+// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +27,9 @@ $campeonato = mysqli_fetch_all($query);
 </head>
 
 <body>
+    <!-- navbar -->
+    <?php require "../include/navbar2.php"; ?>
+    <!-- navbar -->
     <?php if ($_SESSION['acesso'] == 2) : ?>
         <a href="areas/eventos/campeonato.php">Administrar campeonatos</a>
 
@@ -35,15 +42,15 @@ $campeonato = mysqli_fetch_all($query);
         <?php endif; ?>
     <?php endif; ?>
 
-    <div class="container">
+    <div class="container mt-3">
         <div class="row">
             <?php for($i = 0; $i <= count($campeonato) - 1; $i++) : ?>
                 <div class="col-md-4">
                     <div class="card shadow-sm">
-                        <img src="<?php echo $campeonato[$i][3] ?>" alt="imagem campeonato">
-                        <h4 class="ml-3"><?php echo $campeonato[$i][1] ?></h4>
-                        <p class="ml-3"><?php echo $campeonato[$i][2] ?></h4>
-                        <p class="ml-3"><a href="areas/eventos/inscricao.php?id=<?php echo $campeonato[$i][0]?>&tipo=1" class="btn btn-success">Inscrição</a></p>
+                        <img src="<?php echo $campeonato[$i]['image'] ?>" alt="imagem campeonato">
+                        <h4 class="ml-3"><?php echo $campeonato[$i]['name'] ?></h4>
+                        <p class="ml-3"><?php echo $campeonato[$i]['location'] ?></h4>
+                        <p class="ml-3"><a href="areas/eventos/inscricao.php?id=<?php echo $campeonato[$i]['id']?>&tipo=1" class="btn btn-success">Inscrição</a></p>
                     </div>
                 </div>
             <?php endfor; ?>
@@ -51,8 +58,8 @@ $campeonato = mysqli_fetch_all($query);
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="../assets/js/campeonato.js"></script>
 </body>
 

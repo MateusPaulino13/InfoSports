@@ -66,34 +66,34 @@
                     </thead>
                     <tbody>
                         <?php
-                        $peneira = "SELECT id, name, location, description, image, tipo from evento WHERE id_anunciante = {$_SESSION['id']} AND tipo = 2";
-                        $query = mysqli_query($con, $peneira);
+                            $peneira = "SELECT id, name, location, description, image, tipo from evento WHERE id_anunciante = {$_SESSION['id']} AND tipo = 2";
+                            $query = mysqli_query($con, $peneira);
 
-                        if (mysqli_num_rows($query) > 0) {
-                            while ($data = mysqli_fetch_assoc($query)) {
-                                echo "<tr>";
-                                echo "<td>{$data['name']}</td>";
-                                echo "<td>{$data['location']}</td>";
-                                echo "<td>{$data['description']}</td>";
-                                echo "<td>{$data['image']}</td>";
-                                echo '<td><a class="btn btn-danger mr-2" href="peneira.php?id=' .
-                                    $data["id"] .
-                                    '">Excluir</a>
-                                <a class="btn btn-secondary ml-2" href="editar_peneira.php?id=' .
-                                    $data["id"] .
-                                    '">Editar</a></td>';
-                                echo "</tr>";
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($data = mysqli_fetch_assoc($query)) {
+                                    echo "<tr>";
+                                    echo "<td>{$data['name']}</td>";
+                                    echo "<td>{$data['location']}</td>";
+                                    echo "<td>{$data['description']}</td>";
+                                    echo "<td>{$data['image']}</td>";
+                                    echo '<td><a class="btn btn-danger mr-2" href="peneira.php?id=' .
+                                        $data["id"] .
+                                        '">Excluir</a>
+                                    <a class="btn btn-secondary ml-2" href="editar_peneira.php?id=' .
+                                        $data["id"] .
+                                        '">Editar</a></td>';
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='5'>Nenhum registro encontrado</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='5'>Nenhum registro encontrado</td></tr>";
-                        }
 
-                        if (isset($_GET['id'])) {
-                            $id = $_GET['id'];
+                            if (isset($_GET['id'])) {
+                                $id = $_GET['id'];
 
-                            $deletar = "DELETE FROM evento WHERE id = $id";
-                            $query = mysqli_query($con, $deletar);
-                        }
+                                $deletar = "DELETE FROM evento WHERE id = $id";
+                                $query = mysqli_query($con, $deletar);
+                            }
                         ?>
                     </tbody>
                 </table>

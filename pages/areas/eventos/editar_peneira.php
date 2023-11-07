@@ -41,15 +41,15 @@
         </head>
         <body>
             <form method="POST" enctype="multipart/form-data">
-                <input type="text" placeholder="<?php echo $peneira['name'] ?>" name="name" id="name">
+                <input type="text" name="name" id="name" value="<?php echo $peneira['name'] ?>">
 
                 <br>
 
-                <input type="text" placeholder="<?php echo $peneira['location'] ?>" name="location">
+                <input type="text" name="location" value="<?php echo $peneira['location'] ?>">
 
                 <br>
 
-                <textarea rows="2" cols="30" placeholder="<?php echo $peneira['description'] ?>" type="text" name="description"></textarea>
+                <textarea rows="2" cols="30" type="text" name="description" value="<?php echo $peneira['description'] ?>"></textarea>
 
                 <br>
 

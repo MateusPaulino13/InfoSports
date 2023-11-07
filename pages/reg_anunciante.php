@@ -5,12 +5,18 @@ require_once "../actions/conexao.php";
 if (isset($_POST['submit'])) {
     $nome = $_POST['name'];
     $usuario = $_POST['user'];
+    $email = $_POST['email'];
     $senha = $_POST['password'];
     $endereco = $_POST['address'];
     $cpf = $_POST['cpf'];
 
-    $query = "SELECT name, username, password, address, cpf FROM anunciante
-    WHERE name='$nome' AND username='$usuario' AND password='$senha' 
+    if ($_FILES['img']['name']) {
+        move_uploaded_file($_FILES['img']['tmp_name'], "../image/" . $_FILES['img']['name']);
+        $img = "../image/" . $_FILES['img']['name'];
+    }
+
+    $query = "SELECT name, username, email, password, address, cpf FROM anunciante
+    WHERE name='$nome' AND username='$usuario' AND email='$email' AND password='$senha' 
     AND address='$endereco' AND cpf='$cpf'";
 
     $resultado = mysqli_query($con, $query);
@@ -23,7 +29,7 @@ if (isset($_POST['submit'])) {
                 <p>Usuário já existente!</p>
             </div>';
     } else {
-        $query = "INSERT INTO anunciante(name, username, password, address, cpf) VALUES('$nome', '$usuario', '$senha', '$endereco', '$cpf')";
+        $query = "INSERT INTO anunciante(name, username, email, password, image, address, cpf) VALUES('$nome', '$usuario', '$email', '$senha', '$img', '$endereco', '$cpf')";
         mysqli_query($con, $query);
         header("Location: login.php");
     }
@@ -52,7 +58,7 @@ if (isset($_POST['submit'])) {
     <!-- Navbar -->
     <?php require "../include/navbar.php"; ?>
 
-    <form method="post" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         <label for="name">Nome :</label>
         <input name="name" type="text" required>
 
@@ -63,8 +69,17 @@ if (isset($_POST['submit'])) {
 
         <br>
 
+        <label for="email">Email :</label>
+        <input name="email" type="text" required>
+
+        <br>
+
         <label for="password">Senha :</label>
         <input name="password" type="password" required>
+
+        <br>
+
+        <input type="file" id="img" name="img">
 
         <br>
 
