@@ -13,7 +13,7 @@ Projeto de uma Hub para jogadores e times, para facilitar o encontro de peneiras
 
 ## Funcionalidades
 
-- Fácil visuaização de peneiras, campeonatos e notícias
+- Fácil visualização de peneiras, campeonatos e notícias
 - Criação de seus próprios campeonatos, peneiras e notícias
 - Modo tela cheia
 - Responsividade
